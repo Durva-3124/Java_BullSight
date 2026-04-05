@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bullsight
+    username: postgres
+    password: Durva@3124
+    hikari:
+      maximum-pool-size: 10
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+bullsight:
+  finnhub:
+    api-key: ${FINNHUB_API_KEY}
+    ws-url: wss://ws.finnhub.io
+  cors:
+    allowed-origins: http://localhost:5173
+
+logging:
+  level:
+    com.bullsight: DEBUG
